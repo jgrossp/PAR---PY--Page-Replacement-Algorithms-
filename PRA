@@ -1,0 +1,42 @@
+import time
+#returns the most accurate time available
+memory_ram = [0, 0, 0, 0, 0]
+vector = [2,6,3,4,6,1,9,7,5,8,14,10,12,11,13, 14, 15]
+
+point_memory_ram = 0
+point_vector = 0
+while True:
+  if point_memory_ram < 5:
+    memory_ram[point_memory_ram] = vector[0]
+    for i in range(len(vector)):
+      if i < len(vector)-1:
+        vector[i] = vector[i + 1]             
+    point_memory_ram += 1
+    vector.pop()
+    if i == 0:
+      break
+  else:
+    point_memory_ram = 0
+    memory_ram[point_memory_ram] = vector[0]
+    for i in range(len(vector)):
+      if i < len(vector)-1:
+        vector[i] = vector[i+1]
+    point_memory_ram += 1
+    vector.pop()
+  point_memory_ram += 1
+  print('\n Memory Ram: →',memory_ram)
+  print('\n Vector: →',vector)
+  print("================================================================\n================================================================\n")
+  time.sleep(1)
+  #sleep() with a nonzero fraction
+  total_pont = point_memory_ram + 1  
+  total_capacidade = point_vector + 1
+  
+  #for slipt FIFO, 
+
+  print('Total requequest: {0} \n Total Page Faults: {1}'.format(total_pont, total_capacidade))
+  print("================================================================\n================================================================\n")
+  continue
+  if []:
+      break 
+print('Total requequest: {0} \n Total Page Faults: {1}'.format(total_pont, total_capacidade))
