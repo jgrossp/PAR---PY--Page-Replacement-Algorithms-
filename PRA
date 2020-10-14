@@ -1,42 +1,42 @@
 import time
-#returns the most accurate time available
-memory_ram = [0, 0, 0, 0, 0]
-vector = [2,6,3,4,6,1,9,7,5,8,14,10,12,11,13, 14, 15]
-
-point_memory_ram = 0
+memory_ram = [0, 0, 0, 0]
+my_list = []
+vector = []
 point_vector = 0
+point_memory_ram = 0
+while vector != 100:
+    vector = int(input("Enter a number to add the list, if you want to stop enter 100: "))
+    my_list.append(vector)
+    if vector == 100:
+        break
+    print(my_list)
 while True:
-  if point_memory_ram < 5:
-    memory_ram[point_memory_ram] = vector[0]
-    for i in range(len(vector)):
-      if i < len(vector)-1:
-        vector[i] = vector[i + 1]             
+  if point_memory_ram < 4:
+    memory_ram[point_memory_ram] = my_list[0]
+    for n in range(len(my_list)):
+      if n < len(my_list)-1:
+        my_list[n] = my_list[n+1]
     point_memory_ram += 1
-    vector.pop()
-    if i == 0:
-      break
+    my_list.pop()
+    if my_list == []:
+          break
   else:
     point_memory_ram = 0
-    memory_ram[point_memory_ram] = vector[0]
-    for i in range(len(vector)):
-      if i < len(vector)-1:
-        vector[i] = vector[i+1]
+    memory_ram[point_memory_ram] = my_list[0]
+    for n in range(len(my_list)):
+      if n < len(my_list)-1:
+        my_list[n] = my_list[n+1]
     point_memory_ram += 1
-    vector.pop()
-  point_memory_ram += 1
-  print('\n Memory Ram: →',memory_ram)
-  print('\n Vector: →',vector)
-  print("================================================================\n================================================================\n")
+    my_list.pop()
+  point_vector += 1
+  print('MEMORY RAM  ==--||: ', memory_ram , '\n')
+  print('NUMBER OF VECTORS  ==--||: ', my_list, '\n')
   time.sleep(1)
   #sleep() with a nonzero fraction
   total_pont = point_memory_ram + 1  
-  total_capacidade = point_vector + 1
+  total_capacity = point_vector + 1
   
   #for slipt FIFO, 
 
-  print('Total requequest: {0} \n Total Page Faults: {1}'.format(total_pont, total_capacidade))
-  print("================================================================\n================================================================\n")
-  continue
-  if []:
-      break 
-print('Total requequest: {0} \n Total Page Faults: {1}'.format(total_pont, total_capacidade))
+print('Total requequest: {0} \n Total Page Faults: {1}'.format(total_pont, total_capacity))
+print("================================================================\n================================================================\n")
